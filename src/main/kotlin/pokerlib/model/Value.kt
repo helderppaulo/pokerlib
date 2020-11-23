@@ -19,5 +19,4 @@ enum class Value(
     KING(symbol = "K");
 
     fun representation() = symbol
-
 }

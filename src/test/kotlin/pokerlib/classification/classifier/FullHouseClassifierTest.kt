@@ -8,9 +8,14 @@ import org.junit.jupiter.params.provider.ArgumentsSource
 import pokerlib.classification.HandClassificationType.FULL_HOUSE
 import pokerlib.model.Card
 import pokerlib.model.Hand
-import pokerlib.model.Suit.*
+import pokerlib.model.Suit.CLUBS
+import pokerlib.model.Suit.DIAMONDS
+import pokerlib.model.Suit.HEARTS
 import pokerlib.model.Value
-import pokerlib.model.Value.*
+import pokerlib.model.Value.ACE
+import pokerlib.model.Value.FOUR
+import pokerlib.model.Value.THREE
+import pokerlib.model.Value.TWO
 import java.util.stream.Stream
 import kotlin.test.assertEquals
 
@@ -19,9 +24,36 @@ class FullHouseClassifierTest {
     class FullHouseClassifierArgumentProvider : ArgumentsProvider {
         override fun provideArguments(context: ExtensionContext?): Stream<out Arguments> {
             return Stream.of(
-                Arguments.of(Hand(Card(ACE, HEARTS), Card(ACE, DIAMONDS), Card(ACE, CLUBS), Card(THREE, HEARTS), Card(THREE, DIAMONDS)), listOf(ACE, THREE), true),
-                Arguments.of(Hand(Card(FOUR, HEARTS), Card(FOUR, DIAMONDS), Card(FOUR, CLUBS), Card(TWO, HEARTS), Card(TWO, DIAMONDS)), listOf(FOUR, TWO), true),
-                Arguments.of(Hand(Card(THREE, HEARTS), Card(FOUR, DIAMONDS), Card(FOUR, CLUBS), Card(TWO, HEARTS), Card(TWO, DIAMONDS)), null, false)
+                Arguments.of(
+                    Hand(
+                        Card(ACE, HEARTS),
+                        Card(ACE, DIAMONDS),
+                        Card(ACE, CLUBS),
+                        Card(THREE, HEARTS),
+                        Card(THREE, DIAMONDS)
+                    ),
+                    listOf(ACE, THREE), true
+                ),
+                Arguments.of(
+                    Hand(
+                        Card(FOUR, HEARTS),
+                        Card(FOUR, DIAMONDS),
+                        Card(FOUR, CLUBS),
+                        Card(TWO, HEARTS),
+                        Card(TWO, DIAMONDS)
+                    ),
+                    listOf(FOUR, TWO), true
+                ),
+                Arguments.of(
+                    Hand(
+                        Card(THREE, HEARTS),
+                        Card(FOUR, DIAMONDS),
+                        Card(FOUR, CLUBS),
+                        Card(TWO, HEARTS),
+                        Card(TWO, DIAMONDS)
+                    ),
+                    null, false
+                )
             )
         }
     }

@@ -1,7 +1,19 @@
 package pokerlib.utils
 
 import pokerlib.model.Value
-import pokerlib.model.Value.*
+import pokerlib.model.Value.ACE
+import pokerlib.model.Value.EIGHT
+import pokerlib.model.Value.FIVE
+import pokerlib.model.Value.FOUR
+import pokerlib.model.Value.JACK
+import pokerlib.model.Value.KING
+import pokerlib.model.Value.NINE
+import pokerlib.model.Value.QUEEN
+import pokerlib.model.Value.SEVEN
+import pokerlib.model.Value.SIX
+import pokerlib.model.Value.TEN
+import pokerlib.model.Value.THREE
+import pokerlib.model.Value.TWO
 
 object ValueComparator : Comparator<Value> {
 

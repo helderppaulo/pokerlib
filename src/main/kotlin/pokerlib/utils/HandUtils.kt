@@ -2,7 +2,6 @@ package pokerlib.utils
 
 import com.google.common.collect.Sets
 import pokerlib.classification.HandClassification
-import pokerlib.classification.HandClassifier
 import pokerlib.classification.HandComparator
 import pokerlib.classification.adhoc.AdhocHandClassificationComparator
 import pokerlib.classification.adhoc.AdhocHandComparator

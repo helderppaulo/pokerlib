@@ -7,7 +7,6 @@ import pokerlib.model.Value
 import pokerlib.utils.CardComparator
 import pokerlib.utils.handToList
 import pokerlib.utils.listToHand
-import pokerlib.utils.printIntercept
 import java.lang.Integer.toBinaryString
 
 object HandIntegerSerializer {
@@ -42,14 +41,14 @@ object HandIntegerSerializer {
     private fun serializeCard(card: Card): String {
         val serializedValue = toBinaryString(valueMap.getValue(card.value)).padStart(4, '0')
         val serializedSuit = toBinaryString(suitMap.getValue(card.suit)).padStart(2, '0')
-        return "${serializedValue}${serializedSuit}"
+        return "${serializedValue}$serializedSuit"
     }
 
     fun parse(serialized: Int): Hand {
         return serialized
 //            .let(::printIntercept)
             .let(::toBinaryString)
-            .padStart(30 ,'0')
+            .padStart(30, '0')
 //            .let(::printIntercept)
             .chunked(6)
             .map(this::parseCard).let { listToHand(it) }

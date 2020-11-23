@@ -6,7 +6,10 @@ import org.junit.jupiter.params.provider.Arguments
 import org.junit.jupiter.params.provider.ArgumentsProvider
 import org.junit.jupiter.params.provider.ArgumentsSource
 import pokerlib.model.Value
-import pokerlib.model.Value.*
+import pokerlib.model.Value.ACE
+import pokerlib.model.Value.JACK
+import pokerlib.model.Value.KING
+import pokerlib.model.Value.TWO
 import java.util.stream.Stream
 import kotlin.test.assertEquals
 
@@ -28,5 +31,4 @@ class ValueComparatorTest {
     fun comparationTest(first: Value, second: Value, greater: Boolean) {
         assertEquals(greater, ValueComparator.compare(first, second) > 0)
     }
-
 }

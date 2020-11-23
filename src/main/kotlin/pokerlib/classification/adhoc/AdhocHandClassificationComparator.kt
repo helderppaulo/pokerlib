@@ -1,7 +1,16 @@
 package pokerlib.classification.adhoc
 
 import pokerlib.classification.HandClassification
-import pokerlib.classification.HandClassificationType.*
+import pokerlib.classification.HandClassificationType.FLUSH
+import pokerlib.classification.HandClassificationType.FOUR_OF_A_KIND
+import pokerlib.classification.HandClassificationType.FULL_HOUSE
+import pokerlib.classification.HandClassificationType.HIGH_CARD
+import pokerlib.classification.HandClassificationType.PAIR
+import pokerlib.classification.HandClassificationType.ROYAL_FLUSH
+import pokerlib.classification.HandClassificationType.STRAIGHT
+import pokerlib.classification.HandClassificationType.STRAIGHT_FLUSH
+import pokerlib.classification.HandClassificationType.THREE_OF_A_KIND
+import pokerlib.classification.HandClassificationType.TWO_PAIR
 import pokerlib.model.Value
 import pokerlib.utils.ValueComparator
 

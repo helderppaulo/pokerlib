@@ -9,7 +9,7 @@ class DeckUtilsTest {
     fun deckGeneratorTest() {
         possibleHands(HandClassifier::classify)
             .groupBy(keySelector = { it.type })
-            .map { (k,v) -> k to v.size }
+            .map { (k, v) -> k to v.size }
             .forEach { (k, v) -> println("$k : $v") }
     }
 }

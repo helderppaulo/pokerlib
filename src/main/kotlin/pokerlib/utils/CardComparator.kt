@@ -2,7 +2,7 @@ package pokerlib.utils
 
 import pokerlib.model.Card
 
-object CardComparator: Comparator<Card> {
+object CardComparator : Comparator<Card> {
 
     override fun compare(p0: Card?, p1: Card?): Int {
         val valueComparison = ValueComparator.compare(p0?.value, p1?.value)

@@ -6,7 +6,19 @@ import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments
 import org.junit.jupiter.params.provider.ArgumentsProvider
 import org.junit.jupiter.params.provider.ArgumentsSource
-import pokerlib.model.Value.*
+import pokerlib.model.Value.ACE
+import pokerlib.model.Value.EIGHT
+import pokerlib.model.Value.FIVE
+import pokerlib.model.Value.FOUR
+import pokerlib.model.Value.JACK
+import pokerlib.model.Value.KING
+import pokerlib.model.Value.NINE
+import pokerlib.model.Value.QUEEN
+import pokerlib.model.Value.SEVEN
+import pokerlib.model.Value.SIX
+import pokerlib.model.Value.TEN
+import pokerlib.model.Value.THREE
+import pokerlib.model.Value.TWO
 import java.util.stream.Stream
 
 class ValueTest {

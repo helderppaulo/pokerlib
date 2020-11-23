@@ -1,14 +1,11 @@
 package pokerlib.classification.cached
 
 import com.google.common.base.Stopwatch
-import com.google.common.collect.Sets
 import pokerlib.classification.HandClassification
 import pokerlib.classification.HandClassifier
 import pokerlib.classification.adhoc.AdhocHandClassificationComparator
 import pokerlib.serialization.HandIntegerSerializer
 import pokerlib.utils.equivalent
-import pokerlib.utils.generateDeck
-import pokerlib.utils.listToHand
 import pokerlib.utils.possibleHands
 import java.util.concurrent.TimeUnit
 

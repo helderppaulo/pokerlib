@@ -27,7 +27,7 @@ fun generateDeck(shuffle: Boolean = false): Deck {
         .let(::build)
 }
 
-fun take(deck: Deck, n: Int): Pair<Deck,List<Card>> {
+fun take(deck: Deck, n: Int): Pair<Deck, List<Card>> {
     val taken = deck.remaining.subList(0, n)
     return Pair(build(deck.remaining.subList(n, 52), deck.removed.plus(taken)), taken)
 }

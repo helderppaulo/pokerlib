@@ -7,8 +7,15 @@ group = "pokerlib"
 version = "1.0-SNAPSHOT"
 
 repositories {
+    jcenter()
     mavenCentral()
 }
+
+configurations {
+    ktlint
+}
+
+apply plugin: "java"
 
 dependencies {
     implementation platform('org.jetbrains.kotlin:kotlin-bom')
@@ -18,6 +25,7 @@ dependencies {
     testImplementation 'org.jetbrains.kotlin:kotlin-test'
     testImplementation 'org.jetbrains.kotlin:kotlin-test-junit'
     testImplementation "org.jetbrains.kotlin:kotlin-script-runtime:1.4.10"
+    ktlint "com.pinterest:ktlint:0.39.0"
 }
 
 test {
@@ -30,4 +38,22 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
     kotlinOptions {
         jvmTarget = "11"
     }
+}
+
+task ktlint(type: JavaExec, group: "verification") {
+    description = "Check Kotlin code style."
+    main = "com.pinterest.ktlint.Main"
+    classpath = configurations.ktlint
+    args "src/**/*.kt"
+    // to generate report in checkstyle format prepend following args:
+    // "--reporter=plain", "--reporter=checkstyle,output=${buildDir}/ktlint.xml"
+    // see https://github.com/pinterest/ktlint#usage for more
+}
+check.dependsOn ktlint
+
+task ktlintFormat(type: JavaExec, group: "formatting") {
+    description = "Fix Kotlin code style deviations."
+    main = "com.pinterest.ktlint.Main"
+    classpath = configurations.ktlint
+    args "-F", "src/**/*.kt"
 }

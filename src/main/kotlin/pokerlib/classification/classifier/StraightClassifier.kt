@@ -5,7 +5,19 @@ import pokerlib.classification.HandClassificationType.STRAIGHT
 import pokerlib.classification.SpecificHandClassifier
 import pokerlib.model.Hand
 import pokerlib.model.Value
-import pokerlib.model.Value.*
+import pokerlib.model.Value.ACE
+import pokerlib.model.Value.EIGHT
+import pokerlib.model.Value.FIVE
+import pokerlib.model.Value.FOUR
+import pokerlib.model.Value.JACK
+import pokerlib.model.Value.KING
+import pokerlib.model.Value.NINE
+import pokerlib.model.Value.QUEEN
+import pokerlib.model.Value.SEVEN
+import pokerlib.model.Value.SIX
+import pokerlib.model.Value.TEN
+import pokerlib.model.Value.THREE
+import pokerlib.model.Value.TWO
 import pokerlib.utils.ValueComparator
 import pokerlib.utils.valueSet
 

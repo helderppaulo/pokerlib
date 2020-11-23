@@ -3,7 +3,6 @@ package pokerlib.classification
 import pokerlib.model.Hand
 import pokerlib.model.Value
 
-
 data class HandClassification(
     val hand: Hand,
     val type: HandClassificationType,

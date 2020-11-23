@@ -13,5 +13,4 @@ object StraightFlushClassifier : SpecificHandClassifier {
         val (_, _, values, kickers) = StraightClassifier.classify(hand)
         return HandClassification(hand, STRAIGHT_FLUSH, values, kickers)
     }
-
 }

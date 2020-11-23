@@ -7,5 +7,4 @@ interface SpecificHandClassifier {
     fun applies(hand: Hand): Boolean
 
     fun classify(hand: Hand): HandClassification
-
 }

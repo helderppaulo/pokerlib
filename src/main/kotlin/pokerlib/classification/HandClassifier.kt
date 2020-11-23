@@ -1,6 +1,15 @@
 package pokerlib.classification
 
-import pokerlib.classification.classifier.*
+import pokerlib.classification.classifier.FlushClassifier
+import pokerlib.classification.classifier.FourOfAKindClassifier
+import pokerlib.classification.classifier.FullHouseClassifier
+import pokerlib.classification.classifier.HighCardClassifier
+import pokerlib.classification.classifier.PairClassifier
+import pokerlib.classification.classifier.RoyalFlushClassifier
+import pokerlib.classification.classifier.StraightClassifier
+import pokerlib.classification.classifier.StraightFlushClassifier
+import pokerlib.classification.classifier.ThreeOfAKindClassifier
+import pokerlib.classification.classifier.TwoPairClassifier
 import pokerlib.model.Hand
 
 object HandClassifier {
