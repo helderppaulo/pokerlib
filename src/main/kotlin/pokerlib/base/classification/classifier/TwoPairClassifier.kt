@@ -2,8 +2,8 @@ package pokerlib.base.classification.classifier
 
 import pokerlib.base.classification.HandClassification
 import pokerlib.base.classification.HandClassificationType.TWO_PAIR
+import pokerlib.base.classification.ValueComparator
 import pokerlib.base.model.Hand
-import pokerlib.base.utils.ValueComparator
 import pokerlib.base.utils.handToList
 
 object TwoPairClassifier : ValueGroupClassifier(1, 2, 2) {

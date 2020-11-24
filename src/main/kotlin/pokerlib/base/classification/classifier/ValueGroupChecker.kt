@@ -1,7 +1,8 @@
-package pokerlib.base.utils
+package pokerlib.base.classification.classifier
 
 import pokerlib.base.model.Card
 import pokerlib.base.model.Hand
+import pokerlib.base.utils.handToList
 
 object ValueGroupChecker {
 

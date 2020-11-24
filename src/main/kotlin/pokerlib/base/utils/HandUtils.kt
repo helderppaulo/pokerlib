@@ -52,8 +52,9 @@ private fun <T> handSet(hand: Hand, fn: (Card) -> T): Set<T> = handToList(hand).
 
 fun suited(hand: Hand): Boolean = suitSet(hand).size == 1
 
-fun <T> possibleHands(transformer: (Hand) -> T): List<T> {
-    val cards = generateDeck().remaining.toSet()
+private fun fullDeckCards(): Set<Card> = generateDeck().remaining.toSet()
+
+fun <T> possibleHands(transformer: (Hand) -> T, cards: Set<Card> = fullDeckCards()): List<T> {
     return Sets.combinations(cards, 5)
         .map { listToHand(it.toList()) }
         .map(transformer)

@@ -1,4 +1,4 @@
-package pokerlib.base.utils
+package pokerlib.base.classification
 
 import pokerlib.base.model.Suit
 

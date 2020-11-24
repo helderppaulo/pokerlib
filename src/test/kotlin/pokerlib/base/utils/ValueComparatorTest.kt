@@ -5,6 +5,7 @@ import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments
 import org.junit.jupiter.params.provider.ArgumentsProvider
 import org.junit.jupiter.params.provider.ArgumentsSource
+import pokerlib.base.classification.ValueComparator
 import pokerlib.base.model.Value
 import pokerlib.base.model.Value.ACE
 import pokerlib.base.model.Value.JACK

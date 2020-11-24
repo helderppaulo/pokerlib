@@ -3,6 +3,7 @@ package pokerlib.base.classification.classifier
 import pokerlib.base.classification.HandClassification
 import pokerlib.base.classification.HandClassificationType.STRAIGHT
 import pokerlib.base.classification.SpecificHandClassifier
+import pokerlib.base.classification.ValueComparator
 import pokerlib.base.model.Hand
 import pokerlib.base.model.Value
 import pokerlib.base.model.Value.ACE
@@ -18,7 +19,6 @@ import pokerlib.base.model.Value.SIX
 import pokerlib.base.model.Value.TEN
 import pokerlib.base.model.Value.THREE
 import pokerlib.base.model.Value.TWO
-import pokerlib.base.utils.ValueComparator
 import pokerlib.base.utils.valueSet
 
 object StraightClassifier : SpecificHandClassifier {

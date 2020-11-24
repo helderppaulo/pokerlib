@@ -11,8 +11,8 @@ import pokerlib.base.classification.HandClassificationType.STRAIGHT
 import pokerlib.base.classification.HandClassificationType.STRAIGHT_FLUSH
 import pokerlib.base.classification.HandClassificationType.THREE_OF_A_KIND
 import pokerlib.base.classification.HandClassificationType.TWO_PAIR
+import pokerlib.base.classification.ValueComparator
 import pokerlib.base.model.Value
-import pokerlib.base.utils.ValueComparator
 
 object AdhocHandClassificationComparator : Comparator<HandClassification> {
 

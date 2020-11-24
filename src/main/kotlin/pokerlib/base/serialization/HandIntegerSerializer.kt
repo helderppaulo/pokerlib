@@ -1,10 +1,10 @@
 package pokerlib.base.serialization
 
+import pokerlib.base.classification.CardComparator
 import pokerlib.base.model.Card
 import pokerlib.base.model.Hand
 import pokerlib.base.model.Suit
 import pokerlib.base.model.Value
-import pokerlib.base.utils.CardComparator
 import pokerlib.base.utils.handToList
 import pokerlib.base.utils.listToHand
 

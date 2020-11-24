@@ -43,7 +43,3 @@ object HandClassifierCacheFactory {
         return scores.toMap()
     }
 }
-
-fun main() {
-    HandClassifierCacheFactory.create()
-}
