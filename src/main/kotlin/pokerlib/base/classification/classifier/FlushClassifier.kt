@@ -7,11 +7,12 @@ import pokerlib.base.classification.ValueComparator
 import pokerlib.base.model.Card
 import pokerlib.base.model.Hand
 import pokerlib.base.utils.handToList
+import pokerlib.base.utils.sequenced
 import pokerlib.base.utils.suited
 
 object FlushClassifier : SpecificHandClassifier {
 
-    override fun applies(hand: Hand) = suited(hand)
+    override fun applies(hand: Hand) = suited(hand) && !sequenced(hand)
 
     override fun classify(hand: Hand): HandClassification {
         val values = handToList(hand).map(Card::value).sortedWith(ValueComparator.reversed())

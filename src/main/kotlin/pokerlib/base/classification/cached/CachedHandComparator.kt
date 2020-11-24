@@ -6,7 +6,7 @@ import pokerlib.base.serialization.HandIntegerSerializer
 
 object CachedHandComparator : HandComparator {
 
-    private val cache: Map<Int, Int> by lazy { HandClassifierCacheFactory.create() }
+    private val cache: Map<Int, Int> by lazy { FileHandScoreCacheFactory.create() }
 
     override fun compare(first: Hand?, second: Hand?): Int {
         return serialize(first).compareTo(serialize(second))

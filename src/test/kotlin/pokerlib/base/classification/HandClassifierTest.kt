@@ -1,5 +1,7 @@
 package pokerlib.base.classification
 
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtensionContext
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments
@@ -27,8 +29,8 @@ import pokerlib.base.model.Value.TEN
 import pokerlib.base.model.Value.THREE
 import pokerlib.base.model.Value.TWO
 import pokerlib.base.serialization.HandSymbolSerializer
+import pokerlib.base.utils.possibleHands
 import java.util.stream.Stream
-import kotlin.test.assertEquals
 
 class HandClassifierTest {
 
@@ -64,5 +66,28 @@ class HandClassifierTest {
         assertEquals(expectedType, type)
         assertEquals(expectedValue, values)
         assertEquals(expectedKickers, kickers)
+    }
+
+    @Test
+    fun classifierTest() {
+        val calculated = possibleHands(HandClassifier::classify)
+            .groupBy(keySelector = { it.type })
+            .map { (k, v) -> k to v.size }
+            .toMap()
+
+        val classificationCount = mapOf(
+            FOUR_OF_A_KIND to 624,
+            FULL_HOUSE to 3744,
+            THREE_OF_A_KIND to 54912,
+            TWO_PAIR to 123552,
+            PAIR to 1098240,
+            STRAIGHT_FLUSH to 36,
+            STRAIGHT to 10200,
+            FLUSH to 5108,
+            HIGH_CARD to 1302540,
+            ROYAL_FLUSH to 4
+        )
+
+        assertEquals(classificationCount, calculated)
     }
 }

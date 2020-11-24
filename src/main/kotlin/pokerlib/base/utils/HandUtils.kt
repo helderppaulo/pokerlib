@@ -9,6 +9,19 @@ import pokerlib.base.model.Card
 import pokerlib.base.model.Hand
 import pokerlib.base.model.Suit
 import pokerlib.base.model.Value
+import pokerlib.base.model.Value.ACE
+import pokerlib.base.model.Value.EIGHT
+import pokerlib.base.model.Value.FIVE
+import pokerlib.base.model.Value.FOUR
+import pokerlib.base.model.Value.JACK
+import pokerlib.base.model.Value.KING
+import pokerlib.base.model.Value.NINE
+import pokerlib.base.model.Value.QUEEN
+import pokerlib.base.model.Value.SEVEN
+import pokerlib.base.model.Value.SIX
+import pokerlib.base.model.Value.TEN
+import pokerlib.base.model.Value.THREE
+import pokerlib.base.model.Value.TWO
 
 fun handToList(hand: Hand): List<Card> = listOf(hand.first, hand.second, hand.third, hand.fourth, hand.fifth)
 
@@ -60,3 +73,12 @@ fun <T> possibleHands(transformer: (Hand) -> T, cards: Set<Card> = fullDeckCards
         .map(transformer)
         .toList()
 }
+
+private val sequenceOptions = listOf(ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING, ACE)
+    .windowed(5)
+    .map { it.toSet() }
+    .toSet()
+
+fun sequenced(hand: Hand) = sequenceOptions.contains(valueSet(hand))
+
+

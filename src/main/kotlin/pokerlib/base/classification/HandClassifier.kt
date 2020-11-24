@@ -15,17 +15,17 @@ import pokerlib.base.model.Hand
 object HandClassifier {
 
     private val classifiers = listOf(
-        RoyalFlushClassifier,
-        StraightFlushClassifier,
-        FourOfAKindClassifier,
-        FullHouseClassifier,
-        FlushClassifier,
-        StraightClassifier,
-        ThreeOfAKindClassifier,
+        HighCardClassifier,
+        PairClassifier,
+        PairClassifier,
         TwoPairClassifier,
-        PairClassifier,
-        PairClassifier,
-        HighCardClassifier
+        ThreeOfAKindClassifier,
+        StraightClassifier,
+        FlushClassifier,
+        FullHouseClassifier,
+        FourOfAKindClassifier,
+        StraightFlushClassifier,
+        RoyalFlushClassifier
     )
 
     fun classify(hand: Hand): HandClassification {
