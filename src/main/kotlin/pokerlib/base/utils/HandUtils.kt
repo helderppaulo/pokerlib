@@ -80,5 +80,3 @@ private val sequenceOptions = listOf(ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EI
     .toSet()
 
 fun sequenced(hand: Hand) = sequenceOptions.contains(valueSet(hand))
-
-
