@@ -1,10 +1,8 @@
 plugins {
     id 'org.jetbrains.kotlin.jvm' version '1.4.10'
     id 'java-library'
+    id 'jacoco'
 }
-
-group = "pokerlib"
-version = "1.0-SNAPSHOT"
 
 repositories {
     jcenter()
@@ -45,9 +43,6 @@ task ktlint(type: JavaExec, group: "verification") {
     main = "com.pinterest.ktlint.Main"
     classpath = configurations.ktlint
     args "src/**/*.kt", "--reporter=plain", "--reporter=checkstyle,output=${buildDir}/ktlint.xml", "--experimental"
-    // to generate report in checkstyle format prepend following args:
-    // "--reporter=plain", "--reporter=checkstyle,output=${buildDir}/ktlint.xml"
-    // see https://github.com/pinterest/ktlint#usage for more
 }
 check.dependsOn ktlint
 

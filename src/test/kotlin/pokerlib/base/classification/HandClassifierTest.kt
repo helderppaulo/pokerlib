@@ -71,21 +71,20 @@ class HandClassifierTest {
     @Test
     fun classifierTest() {
         val calculated = possibleHands(HandClassifier::classify)
-            .groupBy(keySelector = { it.type })
-            .map { (k, v) -> k to v.size }
-            .toMap()
+            .groupingBy { it.type }
+            .eachCount()
 
         val classificationCount = mapOf(
+            ROYAL_FLUSH to 4,
+            STRAIGHT_FLUSH to 36,
             FOUR_OF_A_KIND to 624,
             FULL_HOUSE to 3744,
+            FLUSH to 5108,
+            STRAIGHT to 10200,
             THREE_OF_A_KIND to 54912,
             TWO_PAIR to 123552,
             PAIR to 1098240,
-            STRAIGHT_FLUSH to 36,
-            STRAIGHT to 10200,
-            FLUSH to 5108,
-            HIGH_CARD to 1302540,
-            ROYAL_FLUSH to 4
+            HIGH_CARD to 1302540
         )
 
         assertEquals(classificationCount, calculated)

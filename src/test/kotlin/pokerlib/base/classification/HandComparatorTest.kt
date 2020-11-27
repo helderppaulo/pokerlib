@@ -19,18 +19,18 @@ class HandComparatorTest {
     class HandComparatorArgumentProvider : ArgumentsProvider {
         override fun provideArguments(context: ExtensionContext?): Stream<out Arguments> {
             return Stream.of(
-                of("[2h,2d,3h,3d,As]", "[2s,2c,3s,3c,4d]", false),
-                of("[2h,2d,3h,3d,4c]", "[2s,2c,3s,3c,4d]", true),
-                of("[2h,2d,2c,3d,4c]", "[2s,2c,3s,3c,4d]", false),
+                of("[2h,2d,3h,3d,As]", "[2s,2c,3s,3c,4d]", false), // two pair with different kicker
+                of("[2h,2d,3h,3d,4c]", "[2s,2c,3s,3c,4s]", true), // 
+                of("[2h,2d,2c,3d,4c]", "[2s,2c,3s,3c,4c]", false),
                 of("[Th,9d,8c,3d,4c]", "[Ts,9c,8s,3c,2d]", false),
-                of("[Th,9d,8c,3d,4c]", "[Ts,9c,8s,4d,3c]", true),
-                of("[Th,9d,8c,3d,4c]", "[Ts,9c,8s,4d,3c]", true),
-                of("[Th,9d,8c,3d,4c]", "[Ts,9c,8s,4d,3c]", true),
+                of("[Td,9d,8c,3d,4c]", "[Ts,9c,8s,4d,3c]", true),
+                of("[Tc,9d,8c,3d,4c]", "[Ts,9c,8s,4d,3c]", true),
+                of("[Ts,9c,8s,4d,3c]", "[Ts,9c,8s,4d,3c]", true),
                 of("[Th,9h,8h,3h,4h]", "[Ts,9s,8s,4s,3s]", true),
                 of("[Th,9h,8h,3h,4h]", "[Th,9h,8h,4h,2h]", false),
                 of("[Th,Td,Ts,3h,4h]", "[9d,9h,9s,4h,3h]", false),
-                of("[9d,9h,9s,5h,4h]", "[9d,9h,9s,4h,3h]", false),
-                of("[9d,9h,9s,4h,3h]", "[9d,9h,9s,4h,2h]", false),
+                of("[9d,9h,9s,5h,4h]", "[9d,9h,9s,4h,3d]", false),
+                of("[9d,9h,9s,4h,3s]", "[9d,9h,9s,4h,2h]", false),
             )
         }
     }
