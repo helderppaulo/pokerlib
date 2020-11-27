@@ -2,6 +2,7 @@ plugins {
     id 'org.jetbrains.kotlin.jvm' version '1.4.10'
     id 'java-library'
     id 'jacoco'
+    id "org.sonarqube" version "3.0"
 }
 
 repositories {
@@ -33,6 +34,20 @@ test {
 }
 
 tasks.jacocoTestReport.reports.xml.enabled = true
+
+sonarqube {
+    properties {
+        property "sonar.host.url", "https://sonarcloud.io"
+        property "sonar.organization", "helderppaulo"
+        property "sonar.projectKey", "helderppaulo_pokerlib"
+        property "sonar.login", "70a700cb2f24c39da69fe8e79f28a7abd9cc4dae"
+        property "sonar.jacoco.reportPaths", "build/reports/jacoco/test/jacocoTestReport.xml"
+        property "sonar.junit.reportsPath", "build/test-results/*/TEST-*.xml"
+    }
+}
+
+project.tasks["sonarqube"].dependsOn "jacocoTestReport"
+project.tasks["jacocoTestReport"].dependsOn "build"
 
 tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
     kotlinOptions {
