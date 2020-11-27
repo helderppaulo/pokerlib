@@ -25,8 +25,6 @@ class HandComparatorTest {
                 of("[Th,9d,8c,3d,4c]", "[Ts,9c,8s,3c,2d]", false),
                 of("[Td,9d,8c,3d,4c]", "[Ts,9c,8s,4d,3c]", true),
                 of("[Tc,9d,8c,3d,4c]", "[Ts,9c,8s,4d,3c]", true),
-                of("[Ts,9c,8s,4d,3c]", "[Ts,9c,8s,4d,3c]", true),
-                of("[Th,9h,8h,3h,4h]", "[Ts,9s,8s,4s,3s]", true),
                 of("[Th,9h,8h,3h,4h]", "[Th,9h,8h,4h,2h]", false),
                 of("[Th,Td,Ts,3h,4h]", "[9d,9h,9s,4h,3h]", false),
                 of("[9d,9h,9s,5h,4h]", "[9d,9h,9s,4h,3d]", false),
