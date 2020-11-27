@@ -20,7 +20,7 @@ class HandComparatorTest {
         override fun provideArguments(context: ExtensionContext?): Stream<out Arguments> {
             return Stream.of(
                 of("[2h,2d,3h,3d,As]", "[2s,2c,3s,3c,4d]", false), // two pair with different kicker
-                of("[2h,2d,3h,3d,4c]", "[2s,2c,3s,3c,4s]", true), // 
+                of("[2h,2d,3h,3d,4c]", "[2s,2c,3s,3c,4s]", true), //
                 of("[2h,2d,2c,3d,4c]", "[2s,2c,3s,3c,4c]", false),
                 of("[Th,9d,8c,3d,4c]", "[Ts,9c,8s,3c,2d]", false),
                 of("[Td,9d,8c,3d,4c]", "[Ts,9c,8s,4d,3c]", true),
