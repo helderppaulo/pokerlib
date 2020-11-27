@@ -1,12 +1,8 @@
 package pokerlib.base.model
 
-enum class Suit(
-    private val symbol: String
-) {
-    HEARTS(symbol = "h"),
-    SPADES(symbol = "s"),
-    CLUBS(symbol = "c"),
-    DIAMONDS(symbol = "d");
-
-    fun representation() = symbol
+enum class Suit {
+    HEARTS,
+    SPADES,
+    CLUBS,
+    DIAMONDS
 }

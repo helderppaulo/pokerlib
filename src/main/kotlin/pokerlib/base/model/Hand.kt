@@ -1,32 +1,15 @@
 package pokerlib.base.model
 
-import pokerlib.base.utils.equivalent
+import pokerlib.base.serialization.symbol.HandSymbolSerializer
 
 data class Hand(
-    val first: Card,
-    val second: Card,
-    val third: Card,
-    val fourth: Card,
-    val fifth: Card
+    val cards: Set<Card>
 ) {
-
-    fun representation(): String {
-        return listOf(first, second, third, fourth, fifth)
-            .joinToString(separator = ",", prefix = "[", postfix = "]") { it.representation() }
+    init {
+        assert(cards.size == 5)
     }
 
     override fun toString(): String {
-        return this.representation()
-    }
-
-    override fun equals(other: Any?): Boolean {
-        return when (other) {
-            is Hand -> equivalent(this, other)
-            else -> false
-        }
-    }
-
-    override fun hashCode(): Int {
-        return super.hashCode()
+        return HandSymbolSerializer.serialize(this)
     }
 }

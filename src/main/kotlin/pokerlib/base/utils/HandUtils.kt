@@ -1,6 +1,7 @@
 package pokerlib.base.utils
 
 import com.google.common.collect.Sets
+import pokerlib.base.classification.CardComparator
 import pokerlib.base.classification.HandClassification
 import pokerlib.base.classification.HandComparator
 import pokerlib.base.classification.adhoc.AdhocHandClassificationComparator
@@ -23,11 +24,14 @@ import pokerlib.base.model.Value.TEN
 import pokerlib.base.model.Value.THREE
 import pokerlib.base.model.Value.TWO
 
-fun handToList(hand: Hand): List<Card> = listOf(hand.first, hand.second, hand.third, hand.fourth, hand.fifth)
+fun handToList(hand: Hand): List<Card> = hand.cards.toList().sortedWith(CardComparator)
 
-fun listToHand(cards: List<Card>): Hand {
-    assert(cards.size == 5)
-    return Hand(cards[0], cards[1], cards[2], cards[3], cards[4])
+fun cardsToHand(vararg cards: Card): Hand {
+    return Hand(cards.toSet())
+}
+
+fun cardsToHand(cards: Collection<Card>): Hand {
+    return Hand(cards.toSet())
 }
 
 fun <T : Any?> printIntercept(o: T): T {
@@ -69,7 +73,7 @@ private fun fullDeckCards(): Set<Card> = generateDeck().remaining.toSet()
 
 fun <T> possibleHands(transformer: (Hand) -> T, cards: Set<Card> = fullDeckCards()): List<T> {
     return Sets.combinations(cards, 5)
-        .map { listToHand(it.toList()) }
+        .map(::cardsToHand)
         .map(transformer)
         .toList()
 }
@@ -80,3 +84,7 @@ private val sequenceOptions = listOf(ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EI
     .toSet()
 
 fun sequenced(hand: Hand) = sequenceOptions.contains(valueSet(hand))
+
+fun <T, U> reversed(map: Map<T, U>): Map<U, T> = map.entries.associate { (k, v) -> v to k }
+
+fun <T> mapToIndex(list: List<T>): Map<T, Int> = list.withIndex().map { (index, item) -> item to index }.toMap()

@@ -2,7 +2,7 @@ package pokerlib.base.classification.cached
 
 import pokerlib.base.classification.HandComparator
 import pokerlib.base.model.Hand
-import pokerlib.base.serialization.HandIntegerSerializer
+import pokerlib.base.serialization.integer.HandIntegerSerializer
 
 object CachedHandComparator : HandComparator {
 

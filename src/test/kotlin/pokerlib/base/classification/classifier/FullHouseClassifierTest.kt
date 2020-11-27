@@ -11,7 +11,7 @@ import pokerlib.base.model.Value.ACE
 import pokerlib.base.model.Value.FOUR
 import pokerlib.base.model.Value.THREE
 import pokerlib.base.model.Value.TWO
-import pokerlib.base.serialization.HandSymbolSerializer
+import pokerlib.base.serialization.symbol.HandSymbolSerializer
 import java.util.stream.Stream
 import kotlin.test.assertEquals
 

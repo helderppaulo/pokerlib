@@ -4,7 +4,7 @@ import com.google.common.base.Stopwatch
 import pokerlib.base.classification.HandClassification
 import pokerlib.base.classification.HandClassifier
 import pokerlib.base.classification.adhoc.AdhocHandClassificationComparator
-import pokerlib.base.serialization.HandIntegerSerializer
+import pokerlib.base.serialization.integer.HandIntegerSerializer
 import pokerlib.base.utils.equivalent
 import pokerlib.base.utils.possibleHands
 import java.util.concurrent.TimeUnit

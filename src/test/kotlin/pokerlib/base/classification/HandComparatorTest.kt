@@ -8,7 +8,7 @@ import org.junit.jupiter.params.provider.ArgumentsProvider
 import org.junit.jupiter.params.provider.ArgumentsSource
 import pokerlib.base.classification.adhoc.AdhocHandComparator
 import pokerlib.base.classification.cached.CachedHandComparator
-import pokerlib.base.serialization.HandSymbolSerializer
+import pokerlib.base.serialization.symbol.HandSymbolSerializer
 import pokerlib.base.utils.equivalent
 import pokerlib.base.utils.stronger
 import java.util.stream.Stream

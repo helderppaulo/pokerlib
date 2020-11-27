@@ -28,7 +28,7 @@ import pokerlib.base.model.Value.SIX
 import pokerlib.base.model.Value.TEN
 import pokerlib.base.model.Value.THREE
 import pokerlib.base.model.Value.TWO
-import pokerlib.base.serialization.HandSymbolSerializer
+import pokerlib.base.serialization.symbol.HandSymbolSerializer
 import pokerlib.base.utils.possibleHands
 import java.util.stream.Stream
 
