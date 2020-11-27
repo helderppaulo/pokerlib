@@ -33,7 +33,11 @@ test {
     useJUnitPlatform()
 }
 
-tasks.jacocoTestReport.reports.xml.enabled = true
+tasks.jacocoTestReport.reports {
+    xml.enabled true
+    html.enabled false
+    xml.destination file("test-report/jacoco/jacoco-test-report.xml")
+}
 
 sonarqube {
     properties {
